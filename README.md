@@ -2,25 +2,25 @@
 
 Flicks is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: 12 hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] User can view a list of movies currently playing in theaters. 
-- [ ] User can view movie details by tapping on a cell.
-- [ ] User sees loading state while waiting for the API.
+- [x] User can view a list of movies currently playing in theaters. 
+- [x] User can view movie details by tapping on a cell.
+- [x] User sees loading state while waiting for the API.
 - [ ] User sees an error message when there is a network error.
 - [ ] User can pull to refresh the movie list.
 
 The following **optional** features are implemented:
 
-- [ ] Add a tab bar for **Now Playing** and **Top Rated** movies.
+- [x] Add a tab bar for **Now Playing** and **Top Rated** movies.
 - [ ] Implement control to switch between list view and grid view.
-- [ ] Add a search bar.
-- [ ] Customize the highlight and selection effect of the cell.
-- [ ] Customize the navigation bar.
+- [x] Add a search bar.
+- [x] Customize the highlight and selection effect of the cell.
+- [x] Customize the navigation bar.
 
 The following **additional** features are implemented:
 
@@ -36,7 +36,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Have an error: navigation.navigate is not a function when change page by clicking the tab
 
 ## License
 

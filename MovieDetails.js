@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import HTMLView from 'react-native-htmlview';
+import PropTypes from 'prop-types';
 
 class MovieDetails extends React.Component {
     render() {
@@ -10,14 +11,13 @@ class MovieDetails extends React.Component {
         const img = {
             uri: moviePosterApi + props.poster_path
         };
-
         return (
             <View>
                 <Image
                     style={styles.image}
                     source={img}
                 />
-                <View>
+                <View style={styles.overview}>
                     <HTMLView
                         value={props.overview} />
                 </View>
@@ -27,17 +27,22 @@ class MovieDetails extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        width: 300,
-        height: 400
-    },
     image: {
-        width: 300,
-        height: 400,
-        borderColor: 'red',
+        height: 300,
+        borderColor: 'blue',
         borderWidth: 1
+    },
+    overview: {
+        margin: 15
     }
 })
+
+MovieDetails.propTypes = {
+    navigation: PropTypes.shape({
+        results: PropTypes.object,
+    })
+}
+
 
 export default MovieDetails
 

@@ -1,18 +1,30 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
     container: {
-        width: 300,
-        height: 400,
-        borderColor: 'red',
-        borderWidth: 1
+        flex: 1,
+        flexDirection: 'row',
+        height: 150,
+        width: '100%',
+        paddingTop: 10
     },
     image: {
-        width: 300,
-        height: 300,
-        borderColor: 'red',
-        borderWidth: 1
+        width: '25%',
+        height: 80,
+    },
+    title: {
+        width: '75%',
+        marginLeft: 10,
+        color: 'black',
+        fontSize: 20
+
+    },
+    overview: {
+        width: '75%',
+        marginLeft: 10,
+
     }
 })
 const moviePosterApi = 'https://image.tmdb.org/t/p/w342';
@@ -30,16 +42,24 @@ class MovieCard extends React.Component {
         return (
             <TouchableHighlight onPress={this.props.loadDetails}>
                 <View style={styles.container}>
-                    <Text> {props.title} </Text>
                     <Image
                         style={styles.image}
                         source={img}
                     />
-                    <Text> {props.ovewview} </Text>
-
+                    <View>
+                        <Text style={styles.title}> {props.title} </Text>
+                        <Text style={styles.overview}>  {props.overview} </Text>
+                    </View>
                 </View>
             </TouchableHighlight>
         )
     }
 }
+
+MovieCard.propTypes = {
+    movie: PropTypes.shape({
+        results: PropTypes.array,
+    })
+}
+
 export default MovieCard;

@@ -2,6 +2,7 @@ import React from 'react';
 import { View, FlatList, ListFooterComponent, ActivityIndicator } from 'react-native';
 import MovieCard from './MovieCard';
 import { SearchBar } from 'react-native-elements'
+import PropTypes from 'prop-types';
 
 
 class MovieList extends React.Component {
@@ -24,7 +25,13 @@ class MovieList extends React.Component {
                 movies: this.props.screenProps.movies
             })
         } else {
-            const movies = this.props.screenProps.movies.filter(item => item.title == searchString)
+            const movies = this.props.screenProps.movies.filter(item => {
+                if (item.title.includes(searchString)) {
+                    return item;
+                }
+            }
+            );
+
             this.setState({
                 movies: movies
             })
@@ -63,6 +70,8 @@ class MovieList extends React.Component {
                     keyExtractor={(movie) => movie.id}
                     onEndReachedThreshold={0.05}
                     onEndReached={props.loadMore}
+                    numColumns={1}
+                    horizontal={false}
                     renderItem={(movieItem) => {
                         return (
                             <MovieCard movie={movieItem.item} loadDetails={() => {
@@ -70,7 +79,6 @@ class MovieList extends React.Component {
                             }
                             } />
                         )
-
                     }}
                     ListFooterComponent={() =>
                         <View>
@@ -82,6 +90,15 @@ class MovieList extends React.Component {
             </View>
         );
     }
+}
+
+MovieList.propTypes = {
+    screenProps: PropTypes.shape({
+        results: PropTypes.object,
+    }),
+    navigation: PropTypes.shape({
+        results: PropTypes.object,
+    })
 }
 
 export default MovieList;
