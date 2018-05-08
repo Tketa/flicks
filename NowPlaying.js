@@ -35,12 +35,7 @@ class NowPlaying extends React.Component {
 
   }
   static navigationOptions = {
-    tabBarLabel: "Now playing",
-    tabBarOnPress: (navigation) => {
-      // console.log(navigation);
-      // navigation.jumpToIndex(1);
-
-    }
+    tabBarLabel: "Now playing"
   }
 
 

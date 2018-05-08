@@ -6,12 +6,7 @@ class TopRated extends React.Component {
         super(props);
     }
     static navigationOptions = {
-        tabBarLabel: "Top Rated",
-        // tabBarOnPress: (navigation)=>{
-            // console.log(navigation);
-            // navigation.jumpToIndex(0);
-
-        // }
+        tabBarLabel: "Top Rated"
     }
     render() {
         return (

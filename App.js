@@ -39,7 +39,6 @@ class App extends React.Component {
   render() {
       return (
           <Tabs></Tabs>
-          // <View></View>
       );
   }
 }
