@@ -12,7 +12,7 @@ The following **required** functionality is completed:
 - [x] User can view movie details by tapping on a cell.
 - [x] User sees loading state while waiting for the API.
 - [ ] User sees an error message when there is a network error.
-- [ ] User can pull to refresh the movie list.
+- [x] User can pull to refresh the movie list.
 
 The following **optional** features are implemented:
 
@@ -20,7 +20,7 @@ The following **optional** features are implemented:
 - [ ] Implement control to switch between list view and grid view.
 - [x] Add a search bar.
 - [x] Customize the highlight and selection effect of the cell.
-- [x] Customize the navigation bar.
+- [] Customize the navigation bar.
 
 The following **additional** features are implemented:
 
@@ -36,7 +36,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Have an error: navigation.navigate is not a function when change page by clicking the tab
+Have an error: navigation.navigate is not a function when change page by clicking the tab navigation
 
 ## License
 
