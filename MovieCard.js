@@ -26,40 +26,38 @@ const styles = StyleSheet.create({
         marginLeft: 10,
 
     }
-})
+});
+
 const moviePosterApi = 'https://image.tmdb.org/t/p/w342';
 
-class MovieCard extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const props = this.props.movie;
-        const img = {
-            uri: moviePosterApi + props.poster_path
-        };
-        return (
-            <TouchableHighlight onPress={this.props.loadDetails}>
-                <View style={styles.container}>
-                    <Image
-                        style={styles.image}
-                        source={img}
-                    />
-                    <View>
-                        <Text style={styles.title}> {props.title} </Text>
-                        <Text style={styles.overview}>  {props.overview} </Text>
-                    </View>
+const MovieCard = (props) => {
+    const img = {
+        uri: moviePosterApi + props.movie.poster_path
+    };
+    return (
+        <TouchableHighlight onPress={props.loadDetails}>
+            <View style={styles.container}>
+                <Image
+                  style={styles.image}
+                  source={img}
+                />
+                <View>
+                    <Text style={styles.title}> {props.movie.title} </Text>
+                    <Text style={styles.overview}>  {props.movie.overview} </Text>
                 </View>
-            </TouchableHighlight>
-        )
-    }
-}
+            </View>
+        </TouchableHighlight>
+    );
+};
 
 MovieCard.propTypes = {
     movie: PropTypes.shape({
         results: PropTypes.array,
-    })
-}
+        poster_path: PropTypes.string,
+        title: PropTypes.string,
+        overview: PropTypes.string,
+    }),
+    loadDetails: PropTypes.func,
+};
 
 export default MovieCard;
